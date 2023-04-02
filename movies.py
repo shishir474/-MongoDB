@@ -119,50 +119,65 @@ class Movies():
 
 def main():
     obj = Movies()
-    # obj.top_ten_movies_with_highest_imdb()
 
-    # year = input("Enter the year for which you want to see month wise comment count: \n")
-    # try:
-    #     valid_year = int(year)
-    #     obj.top_ten_movies_with_highest_imdb_in_given_year(valid_year)
-    # except ValueError:
-    #     print("please enter a valid year. Only numerical value is allowed")
-
-    # obj.top_ten_movies_with_highest_IMDB_rating_with_number_of_votes_greaterthan_1000()
-
-    # REGEX for movie names starting with D
-    # pattern='^D'
-    # obj.solve(pattern)
-
-    # obj.top_ten_directors_who_created_max_movies()
-
-    # year = input("Enter the year: \n")
-    # try:
-    #     valid_year = int(year)
-    #     obj.top_ten_directors_who_created_max_movies_in_specific_year(valid_year)
-    # except ValueError:
-    #     print("please enter a valid year. Only numerical value is allowed")
+    print("""
+            Enter Choice:
+            1. Top 10 movies with highest imdb
+            2. Top 10 movies with highest imdb in a given year
+            3. Top 10 movies with highest imdb ratings and number of votes greater than 1000
+            4. Top 10 movies with highest tomato ratings
+            5. Top 10 directors who created max movies
+            6. Top 10 directors who created max movies in a given year
+            7. Top 10 directors who created max movies for a given genre
+            8. Top 10 actors who starred in max movies
+            9. Top 10 actors who starred in max movies in a given year
+            10.Top 10 actors who starred in max movies in a given genre
+            11.Top 10 movies in each genre with highest imdb ratings
+            """)
     
-    # obj.top_ten_directors_who_created_max_no_of_movies_for_given_genre("Short")
-
-    # obj.top_ten_actors_who_starred_in_max_movies()
-
-    # obj.top_ten_actors_who_starred_in_max_movies_in_given_year()
-
-    # year = input("Enter the year: \n")
-    # try:
-    #     valid_year = int(year)
-    #     obj.top_ten_actors_who_starred_in_max_movies_in_given_year(valid_year)
-    # except ValueError:
-    #     print("please enter a valid year. Only numerical value is allowed")
-
-    # obj.top_ten_actors_who_starred_in_max_movies_in_given_genre("Action")
-
-    obj.top_ten_movies_for_each_genre_with_highest_imdb_rating()
-
-
-
-
+    ch=int(input())
+    if ch == 1:
+        obj.top_ten_movies_with_highest_imdb()
+    elif ch==2:
+        year = input("Enter the year for which you want to see month wise comment count: \n")
+        try:
+            valid_year = int(year)
+            obj.top_ten_movies_with_highest_imdb_in_given_year(valid_year)
+        except ValueError:
+            print("please enter a valid year. Only numerical value is allowed")
+    elif ch==3:
+        obj.top_ten_movies_with_highest_IMDB_rating_with_number_of_votes_greaterthan_1000()
+    elif ch==4:
+        # REGEX for movie names starting with D
+        pattern='^D'
+        obj.movies_with_highest_tomato_ratings(pattern)
+    elif ch==5:
+        obj.top_ten_directors_who_created_max_movies()
+    elif ch==6:
+        year = input("Enter the year: \n")
+        try:
+            valid_year = int(year)
+            obj.top_ten_directors_who_created_max_movies_in_specific_year(valid_year)
+        except ValueError:
+            print("please enter a valid year. Only numerical value is allowed")
+    elif ch==7:
+        obj.top_ten_directors_who_created_max_no_of_movies_for_given_genre("Short")
+    elif ch==8:
+        obj.top_ten_actors_who_starred_in_max_movies()
+    elif ch==9:
+        year = input("Enter the year: \n")
+        try:
+            valid_year = int(year)
+            obj.top_ten_actors_who_starred_in_max_movies_in_given_year(valid_year)
+        except ValueError:
+            print("please enter a valid year. Only numerical value is allowed")
+    elif ch==10:
+        obj.top_ten_actors_who_starred_in_max_movies_in_given_genre("Action")
+    elif ch==11:
+        obj.top_ten_movies_for_each_genre_with_highest_imdb_rating()
+    else:
+        print("Wrong choice")
+        
 
 
 if(__name__=="__main__"):
