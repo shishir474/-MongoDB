@@ -1,5 +1,7 @@
 # Creating Database and Collections
-file: config.py
+
+--file: config.py
+
 To access MongoDB database, python needs a MongoDB driver. Here I have used PyMongo.
 Use pip to install pymongo
 To create a database in MongoDB, we first need to create a mongoClient object & then specify the connection url with the correct ip address and the name of the database you want to create
@@ -7,7 +9,9 @@ After creating database, create collections for movies, users, comments, theatre
 
 
 # COMMENTS COLLECTION
-file: comments.py
+
+-- file: comments.py
+
 Q.1 In this problem, we have to find top 10 users who made the maximum number of comments.Performed aggregate operation on comments collection where I have grouped the comments on the basis of the user's name and also maintained the comments count using sum function and then sort the result on basis of commentsCount and use limit 10 to get the top 10 users who made max number of comments.
 
 Q.2 In this problem, we have to find top 10 movies with maximum comments. Performed aggregate operation on comments collection where I have grouped the comments on the basis of the movie_Id and also maintained the comments count using sum function and then sort the result on basis of commentsCount and use limit 10 to get the aggregate_result. Created a list lst which contains the movie_name and corresponding comment count. Iterate over this aggregate_result and populate the list. Created a pandas dataframe using this list containing 2 columns movie_name and comment_count
@@ -16,7 +20,9 @@ Q.3 In this problem, for a given year we have to find total number of comments c
 
 
 # MOVIES COLLECTION
-file: movies.py
+
+--file: movies.py
+
 Q.4 In this problem, we have to find top 10 movies with highest IMDB ratings. Used movies collection for this problem. First we have to discard all those records where IMDB ratings is equal to "" and then sort the records on the basis of imdb ratings in descending order and then used limit 10 tho get top 10 results.
 
 Q.5 In this problem, we have to find top 10 movies with highest IMDB ratings in a given year. Used movies collection for this problem. First we have to discard all those records where IMDB ratings is equal to "" and year doesn't match with the given year. Then sort the records on the basis of imdb ratings in descending order and then used limit 10 tho get top 10 results.
@@ -40,7 +46,9 @@ Q.13 In this problem, we have to find top 10 actors who starred in the maximum n
 Q.14 In this problem, we have to find top 10 movies for each genre with the highest IMDB rating. First we need to get all the genres. For this performed aggregate operation on movies collection, unwind the genre and then perform grouping on basis of genre. Loop over the genres extracted in the first part and for each genre perform aggregate operation where we first match the genre and also ensure that imdb rating is not empty.Then sort the result on basis of IMDB ratings in descending order and use limit 4 to get the top 4 movies in that particular genre. 
 
 # THEATRES COLLECTION
-file: theatres.py
+
+-- file: theatres.py
+
 Q.15 In this problem, we have to find Top 10 cities with the maximum number of theatres. Performed aggregate operation on the theatres collection where we need to group the records on basis of location.address.city and also need to maintain corresponding theatres count indicating number of theatres in that city. Sort the result on basis of theatresCount in descending order & use limit 10 to get the top 10 cities with max number of theatres
 
 Q.16 In this problem, we have to find top 10 theatres nearby given coordinates. Here we need to create index on the location field. Geonear operator requires indexing on our geolocation object. Performed aggregate operation on the theatres collection. Used geonear operator which outputs documents in order of nearest to farthest from a specified point. In geonear we have to specify the coordinates and the location type. Finally used limit 10 to get the top 10 nearest theatres from the given coordinates
