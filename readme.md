@@ -1,3 +1,4 @@
+# Creating Database and Collections
 To access MongoDB database, python needs a MongoDB driver. Here I have used PyMongo.
 Use pip to install pymongo
 To create a database in MongoDB, we first need to create a mongoClient object & then specify the connection url with the correct ip address and the name of the database you want to create
