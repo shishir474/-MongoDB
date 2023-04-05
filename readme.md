@@ -4,7 +4,7 @@ To create a database in MongoDB, we first need to create a mongoClient object & 
 After creating database, create collections for movies, users, comments, theatres and sessions and import the data into these collections using mongoImport tool
 
 
--- COMMENTS COLLECTION
+# COMMENTS COLLECTION
 
 Q.1 In this problem, we have to find top 10 users who made the maximum number of comments.Performed aggregate operation on comments collection where I have grouped the comments on the basis of the user's name and also maintained the comments count using sum function and then sort the result on basis of commentsCount and use limit 10 to get the top 10 users who made max number of comments.
 
@@ -13,7 +13,7 @@ Q.2 In this problem, we have to find top 10 movies with maximum comments. Perfor
 Q.3 In this problem, for a given year we have to find total number of comments created for each month in that year. Performed aggregate operation on comments collection, first used project operation to project the year and month from the given date using month and date operator.Then performed a match operation to match the records for the given year and then performed the grouping on the basis of month and maintained a count which indicates the total number of comments created for that month, sort the result and project the month and its correspoding comment count.
 
 
-MOVIES COLLECTION
+# MOVIES COLLECTION
 
 Q.4 In this problem, we have to find top 10 movies with highest IMDB ratings. Used movies collection for this problem. First we have to discard all those records where IMDB ratings is equal to "" and then sort the records on the basis of imdb ratings in descending order and then used limit 10 tho get top 10 results.
 
@@ -37,7 +37,7 @@ Q.13 In this problem, we have to find top 10 actors who starred in the maximum n
 
 Q.14 In this problem, we have to find top 10 movies for each genre with the highest IMDB rating. First we need to get all the genres. For this performed aggregate operation on movies collection, unwind the genre and then perform grouping on basis of genre. Loop over the genres extracted in the first part and for each genre perform aggregate operation where we first match the genre and also ensure that imdb rating is not empty.Then sort the result on basis of IMDB ratings in descending order and use limit 4 to get the top 4 movies in that particular genre. 
 
-THEATRES COLLECTION
+# THEATRES COLLECTION
 
 Q.15 In this problem, we have to find Top 10 cities with the maximum number of theatres. Performed aggregate operation on the theatres collection where we need to group the records on basis of location.address.city and also need to maintain corresponding theatres count indicating number of theatres in that city. Sort the result on basis of theatresCount in descending order & use limit 10 to get the top 10 cities with max number of theatres
 
