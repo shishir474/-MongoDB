@@ -4,7 +4,7 @@ To create a database in MongoDB, we first need to create a mongoClient object & 
 After creating database, create collections for movies, users, comments, theatres and sessions and import the data into these collections using mongoImport tool
 
 
-COMMENTS COLLECTION
+-- COMMENTS COLLECTION
 
 Q.1 In this problem, we have to find top 10 users who made the maximum number of comments.Performed aggregate operation on comments collection where I have grouped the comments on the basis of the user's name and also maintained the comments count using sum function and then sort the result on basis of commentsCount and use limit 10 to get the top 10 users who made max number of comments.
 
