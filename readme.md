@@ -1,6 +1,6 @@
 # MongoDB Assignment
 
-config.py
+# config.py
 
 To access MongoDB database, python needs a MongoDB driver. Here I have used PyMongo.
 Use pip to install pymongo
